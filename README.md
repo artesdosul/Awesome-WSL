@@ -11,12 +11,13 @@ An Awesome collection of Windows Subsystem for Linux (WSL) information, distribu
   - [3. Windows](#3-windows)
   - [4. WSL1](#4-wsl1)
   - [5. WSL2](#5-wsl2)
-  - [6. Emulation](#6-emulation)
-  - [7. Details](#7-details)
-  - [8. Installation](#8-installation)
-  - [9. Use Cases](#9-use-cases)
-  - [10. GUI Apps](#10-gui-apps)
-  - [11. Systemd](#11-systemd)
+  - [6. WSLC](#6-wslc)
+  - [7. Emulation](#7-emulation)
+  - [8. Details](#8-details)
+  - [9. Installation](#9-installation)
+  - [10. Use Cases](#10-use-cases)
+  - [11. GUI Apps](#11-gui-apps)
+  - [12. Systemd](#12-systemd)
 - [Using WSL](#using-wsl)
     - [The WSL Shell](#the-wsl-shell)
     - [Programming on WSL](#programming-on-wsl)
@@ -74,11 +75,17 @@ WSL2 was announced at Microsoft Build 2019. WSL2 features a Linux kernel running
 - [The new Windows subsystem for Linux architecture: a deep dive](https://www.youtube.com/watch?v=lwhMThePdIo) - WSL2 presentation at Microsoft Build 2019
 - [WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel) - The source for the Linux kernel used in Windows Subsystem for Linux 2. 
 
-### 6. Emulation
+### 6. WSLC
+
+WSL Containers (WSLC) refers to container workflows and tooling built around WSL-backed Linux environments, with session-aware management for images, containers, networking, and related operations.
+
+- [WSL Container is now available for public preview](https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/) - Microsoft announcement and preview details for WSL Containers.
+
+### 7. Emulation
 
 Windows Subsystem for Linux is not an emulator or virtualizer like [VirtualBox](https://www.virtualbox.org). WSL1 is closer in its approach to [Wine](https://www.winehq.org) which is a compatibility layer to run Windows binaries on Linux by re-implementing Windows system and API calls in libraries.
 
-### 7. Details
+### 8. Details
 
 You want the gritty details? Here they are:
 
@@ -92,23 +99,23 @@ You want the gritty details? Here they are:
 - [Windows Subsystem for Linux - Update](https://www.youtube.com/watch?v=PP_T_m0UV9E) from Microsoft Developer YouTube channel. 
 - [Windows for Linux Nerds](https://blog.jessfraz.com/post/windows-for-linux-nerds/) from Microsoft developer Jessie Frazelle.
 
-### 8. Installation
+### 9. Installation
 
 - [WSL1 Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install) - Microsoft's official guide for WSL.
 - [Windows Server Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-on-server) - Microsoft's official guide for Windows Server.
 - [Windows-Subsystem-For-Linux-Setup](https://github.com/michaeltreat/Windows-Subsystem-For-Linux-Setup) - A basic guide for how to get setup with the WSL feature that is included with Windows 10. ![github project][githublogo]
 
-### 9. Use Cases
+### 10. Use Cases
 
 WSL is undoubtedly a tool for power-users, developers, and *NIX/Linux geeks who want to run Windows. Most of the things you can do with WSL are going to be related to programming, the console, sysadmin, automation, AI/data science, and other geeky things.
 
-### 10. GUI Apps
+### 11. GUI Apps
 
 Yes, a [suprising number](https://github.com/ethanhs/WSL-Programs) of Linux GUI apps can run on WSL. GUI applications are officially supported on WSL2 with Windows Insider Preview since Windows 10 Insider Preview build 21286. It will also be available in Windows 10's fall 2021 release, and Windows 11. The GUI capabilities of WSL2 are informally referred to as WSLg.
 
 If you have an earlier release of Windows 10, then running a GUI app on WSL requires an operational X server on Windows. This must be downloaded, installed, and running for your GUI app to open from WSL; or it will complain that it cannot find a display. X servers for Windows include [X410](https://apps.microsoft.com/store/detail/x410/9NLP712ZMN9Q) 💰 (very highly recommended), [VcXsrv](https://sourceforge.net/projects/vcxsrv/), [GWSL](https://www.microsoft.com/store/apps/9NL6KD1H33V3), or [Xming](https://sourceforge.net/projects/xming/) on Windows 10.
 
-## 11. Systemd
+## 12. Systemd
 
 On September 21<sup>st</sup> 2022, Microsoft announced<sup><strong>[1]</strong></sup> official support for `systemd` in WSL2 disributions. As of version 0.67.6 of WSL2, you can now enable booting with systemd in WSL, enabling support for services and applications like snap.
 <br>
@@ -309,6 +316,9 @@ An X server running on Windows is required for running Linux GUI apps on Windows
 - [Terminator](https://medium.com/@bhupathy/install-terminator-on-windows-with-wsl-2826591d2156) - Feature-rich tabbed terminal. Requires X server.
 - [Alacritty](https://github.com/alacritty/alacritty) - A terminal emulator with focus on performance and simplicity.
 - [Fluent Terminal](https://github.com/felixse/FluentTerminal) - A Terminal Emulator based on UWP and web technologies.
+- [KKTerm](https://github.com/ryantsai/KKTerm) - A Windows-first, local-first terminal for managing connections, sessions, and workspaces.
+- [Yaw](https://yaw.sh) - A cross-platform terminal that auto-detects WSL along with PowerShell, CMD, and Git Bash on Windows.
+- [AbsoluteTelnet/SSH](https://www.celestialsoftware.net/absolutetelnet/) - Windows SSH, SFTP, Telnet, and serial terminal client with tabbed sessions, Unicode support, and smart-card/certificate authentication.
 
 #### For Managing WSL Installations
 
@@ -316,7 +326,9 @@ An X server running on Windows is required for running Linux GUI apps on Windows
 - [LxRunOffline](https://github.com/DDoSolitary/LxRunOffline) - A full-featured utility for managing WSL. ![github project][githublogo]
 - [Raft WSL](https://www.microsoft.com/store/apps/9MSMJQD017X7) - Raft is a Windows Subsystem for Linux (WSL) distribution manager in native C#/XAML. 💰
 - [WSL GUI Tool](https://github.com/emeric-martineau/wsl-gui-tool) - A graphical tool to manage (run, stop, import, export...) WSL. ![github project][githublogo]
-- [WSL Distro Manager](https://github.com/bostrot/wsl2-distro-manager) - GUI to manage, copy, distribute WSL distros. ![github project][githublogo]
+- [WSL Manager](https://github.com/bostrot/wsl2-distro-manager) - Free, open-source GUI for WSL: install distros from a catalogue or any Docker image, copy, move, back up and compact them, edit `.wslconfig`, mount disks, manage a remote host's WSL over SSH; optional AI assistant and MCP server. Also manages native Linux VMs on macOS. ![github project][githublogo]
+- [WSL UI](https://github.com/octasoft-ltd/wsl-ui) - A lightweight desktop application for managing WSL distributions built with Tauri. ![github project][githublogo]
+- [WSL Dashboard](https://github.com/owu/wsl-dashboard) - A modern, lightweight GUI dashboard for managing WSL distributions. ![github project][githublogo]
 
 #### WSL Utilities
 
@@ -326,6 +338,7 @@ An X server running on Windows is required for running Linux GUI apps on Windows
 - [wsl-proxy](https://github.com/watzon/wsl-proxy) - A collection of 'proxy' batch files that can be used to route requests to the WSL version of a command. ![github project][githublogo]
 - [wslpath](https://github.com/laurent22/wslpath) - Easily convert Windows to WSL path names and vice-versa. ![github project][githublogo]
 - [wsl-open](https://github.com/4U6U57/wsl-open) - Open files with xdg-open in WSL from Windows applications. ![github project][githublogo]
+- [wsl-open](https://github.com/jbwfu/wsl-open) - A Go utility for WSL to open files, directories, and URLs in their default Windows applications. ![github project][githublogo]
 - [OpenInWSL](https://github.com/Opticos/OpenInWSL-Source) - Easily Make WSL Linux Apps Windows File Handlers. ![github project][githublogo]
 - [is-wsl for Node](https://github.com/sindresorhus/is-wsl) - Check if the current process is running inside Windows Subsystem for Linux, useful for scripting. ![github project][githublogo]
 - [wsl-gui-bins](https://github.com/Konfekt/wsl-gui-bins) -  Start common GUI applications under WSL as under Linux. ![github project][githublogo]
@@ -340,15 +353,22 @@ An X server running on Windows is required for running Linux GUI apps on Windows
 - [wslpy](https://github.com/wslutilities/wslpy) - A Python3 library for WSL specific tasks. ![github project][githublogo]
 - [wsl-vpnkit](https://github.com/sakai135/wsl-vpnkit) - Script providing network connectivity to WSL 2 when blocked by VPN. ![github project][githublogo]
 - [xdg-open-wsl](https://github.com/cpbotha/xdg-open-wsl) - xdg-open replacement for WSL that opens files and links using Windows applications. ![github project][githublogo]
+- [gowinbridge](https://github.com/Sibikrish3000/gowinbridge) - A Go library and CLI for executing Windows binaries from WSL. ![github project][githublogo]
+- [Porthole](https://github.com/celloza/porthole) - A native Windows desktop dashboard for WSL Containers with tray-hosted backend operations. ![github project][githublogo]
+- [wip](https://github.com/slidict/wip) - A native CLI that brings dip-like development workflows to Microsoft WSL Containers (WSLC).
+- [Portable Linux in a Box](https://github.com/aivrar/portable-linux-in-a-box) - A ~252 KB C launcher that packages Linux web UIs, CLIs and dev servers as double-click Windows apps, auto-detecting WSL2 with QEMU/WHPX fallbacks. ![github project][githublogo]
 
 #### WSL-Specific Development Tools
 
 - [ghc](https://launchpad.net/~hvr/+archive/ubuntu/ghc-wsl) - A version of the Glasgow Haskell Compiler built and optimized for WSL and hosted in a PPA for Debian and Ubuntu-based WSL distros.
+- [claude-code-wsl2-setup](https://github.com/congmnguyen/claude-code-wsl2-setup) - Claude Code setup for WSL2 + Windows Terminal: Codex delegation, screenshot paste as WSL paths, Windows notifications, LSP wiring, statusline, and safety/context hygiene hooks. ![github project][githublogo]
 
 #### Miscellaneous Tools
 
 - [BootShellCredentialProvider](https://github.com/NathanCastle/BootShellCredentialProvider) - BSCP lets you boot Windows directly into a Linux desktop experience such as xfce4 using Windows native login and a combination of Xming & WSL upon login. ![github project][githublogo]
+- [teamviewer-on-wsl](https://github.com/ariel42/teamviewer-on-wsl) - Run TeamViewer on a WSL2 Linux desktop, reachable from anywhere with no port forwarding or VPN (unlike VNC), fully unattended. Includes the fix for a WSL-specific bug that otherwise blocks TeamViewer's screen sharing. ![github project][githublogo]
 - [wsl-dotfiles](https://github.com/Xyene/wsl-dotfiles) - Configuration files and scripts for creating an i3-based environment inside WSL. ![github project][githublogo]
+- [marcop135/dotfiles-core](https://github.com/marcop135/dotfiles-core) - Manifest-driven dotfiles for WSL bash plus native Windows (Git Bash, PowerShell) and macOS zsh; one shared sh layer, dry-run installers. ![github project][githublogo]
 - [EnumWSL](https://github.com/therealkenc/EnumWSL) - Enumerates installed WSL packages. ![github project][githublogo]
 - [WSL-DistroLauncher](https://github.com/Microsoft/WSL-DistroLauncher) - Reference launcher app for developing your own WSL distribution Microsoft Store package. ![github project][githublogo]
 - [WSL_Reverse](https://github.com/Biswa96/WSL_Reverse) - Reveal hidden COM interface between WSL and Lxss Manager Service. ![github project][githublogo]
